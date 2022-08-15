@@ -90,8 +90,8 @@ export default {
         let inst = this;
         img.onload = function () {
           let image = new fabric.Image(img);
-          image.scaleToWidth(inst.canvasWidth);
-          image.scaleToHeight(inst.canvasHeight);
+          image.scaleToWidth(inst.canvasWidth, false);
+          // image.scaleToHeight(inst.canvasHeight);
           inst.canvas.setBackgroundImage(
             image,
             inst.canvas.renderAll.bind(inst.canvas)
