@@ -69,6 +69,12 @@ export default {
     new CanvasHistory(this.canvas, currentCanvas);
   },
   methods: {
+    canvasSize() {
+      this.canvas.setDimensions({
+        width: props.width,
+        height: props.height,
+      });
+    },
     getObjectsById(objectId) {
       let objects = this.canvas.getObjects();
       let findedObject = [];
