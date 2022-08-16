@@ -69,12 +69,6 @@ export default {
     new CanvasHistory(this.canvas, currentCanvas);
   },
   methods: {
-    canvasSize() {
-      this.canvas.setDimensions({
-        width: props.width,
-        height: props.height,
-      });
-    },
     getObjectsById(objectId) {
       let objects = this.canvas.getObjects();
       let findedObject = [];
@@ -293,6 +287,12 @@ export default {
           };
           this.drawArrow(this.params);
           break;
+        }
+        case "canvasSize": {
+          this.canvas.setDimensions({
+            width: props.width,
+            height: props.height,
+          });
         }
         case "freeDrawing": {
           this.currentActiveTool = type;
